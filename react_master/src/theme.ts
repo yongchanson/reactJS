@@ -3,7 +3,7 @@ import { atom } from "recoil";
 
 export const darkTheme: DefaultTheme = {
   bgColor: "#2f3640",
-  textColor: "white",
+  textColor: "gray",
   accentColor: "yellow",
   cardBgColor: "black",
 };
