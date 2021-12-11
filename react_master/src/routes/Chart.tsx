@@ -2,6 +2,8 @@ import { useQuery } from "react-query";
 import { fetchCoinHistory } from "../api";
 import ApexChart from "react-apexcharts";
 import styled from "styled-components";
+import { useRecoilValue } from "recoil";
+import { Atom } from "../theme";
 
 interface ChartProps {
   coinId: string;
@@ -22,6 +24,9 @@ const Container = styled.div`
 `;
 
 function Chart({ coinId }: ChartProps) {
+
+  const mode = useRecoilValue(Atom);
+
   const { isLoading, data } = useQuery<IHistorical[]>(
     ["ohlc", coinId],
     () => fetchCoinHistory(coinId),
@@ -60,6 +65,9 @@ function Chart({ coinId }: ChartProps) {
             },
             yaxis: {
                 show: false,
+            },
+            theme:{
+              mode: mode ? "dark" : "light",
             },
           }}
         />
