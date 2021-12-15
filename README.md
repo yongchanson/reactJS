@@ -18,7 +18,7 @@ useState
   - 라우터 안에 라우터(보통 탭에 사용)
 -  4.10 useQuery(Hook)
   - 모든 state, fetch 대체
--  5.0 Recoil
+- 5.0 Recoil
   - ReactJs 상태관리 library!(nodeJS 미들웨어와 비슷한 역할)
 - 5.4 useRecoilValue
   - `const isDark(원하는값) = useRecoilValue(atom)`
